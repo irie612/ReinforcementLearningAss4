@@ -33,7 +33,7 @@ def main():
 
     n_time_steps = 1000
     gamma = 0.99
-    learning_rate = 0.01
+    learning_rate = 0.001
 
     pi = MonteCarloG(env.observation_space.shape, env.action_space.n, learning_rate, gamma)
 
@@ -43,7 +43,7 @@ def main():
         r_list = []
         a_list = []
         done = False
-        for i in range(1000):
+        for i in range(100):
 
             a, p = pi.select_action(s)
 
@@ -57,7 +57,7 @@ def main():
             a_list.append(a)
             r_list.append(r)
 
-            if done or i == 999:
+            if done or i == 99:
                 print('done')
                 pi.update(r_list,a_list,s_list)
                 print(np.sum(r_list))
