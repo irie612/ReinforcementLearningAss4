@@ -10,10 +10,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # or any {'0', '1', '2'}
 def get_model(input, output, lr):
     model = Sequential()
     model.add(tf.keras.Input(shape=input))
-    model.add(Dense(12, activation='relu'))#, kernel_initializer=initializer))
-    model.add(Dense(24, activation='relu'))#, kernel_initializer=initializer))
-    model.add(Dense(12, activation='relu'))#, kernel_initializer=initializer))
-    model.add(Dense(output, activation='softmax'))#, kernel_initializer=initializer))
+    model.add(Dense(12, activation='relu'))
+    model.add(Dense(24, activation='relu'))
+    model.add(Dense(12, activation='relu'))
+    model.add(Dense(output, activation='softmax'))
     model.compile(optimizer=tf.keras.optimizers.Adam(lr))
     return model
 
