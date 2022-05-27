@@ -1,6 +1,6 @@
 from multiprocessing import Pool, cpu_count
 import numpy as np
-from Agents import MonteCarloG  
+from Agents import MonteCarloG
 import gym
 from Helper import smooth, plot_colormap, plot_reward_graph
 from tqdm import tqdm
